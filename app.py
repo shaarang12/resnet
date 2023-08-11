@@ -5,8 +5,13 @@ import tensorflow as tf
 from PIL import Image
 import pickle
 
-# Load the trained model
-model = pickle.load(open('modelRESNET.pkl', 'rb'))
+# Create an instance of the model architecture
+model = rt.ResNet50(weights=None)  # Use the appropriate ResNet model
+
+# Load the saved model weights using pickle
+with open('modelRESNET_weights.pkl', 'rb') as f:
+    model_weights = pickle.load(f)
+    model.set_weights(model_weights)
 
 
 
