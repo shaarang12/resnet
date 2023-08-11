@@ -9,7 +9,7 @@ import pickle
 model = rt.ResNet50(weights=None)  # Use the appropriate ResNet model
 
 # Load the saved model weights using pickle
-with open('modelRESNET_weights.pkl', 'rb') as f:
+with open('modelRESNET.pkl', 'rb') as f:
     model_weights = pickle.load(f)
     model.set_weights(model_weights)
 
