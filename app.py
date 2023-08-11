@@ -1,13 +1,14 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
+from tensorflow.keras.applications import resnet as rt
 from PIL import Image
+import pickle
 
 # Load the trained model
-#model = tf.keras.models.load_model('path_to_your_model')
+model = pickle.load(open('modelRESNET.pkl', 'rb'))
 
-# Define class labels
-class_labels = ['Class 0', 'Class 1', 'Class 2', ...]  # Replace with your actual class labels
+
 
 def preprocess_image(image):
     image = image.resize((224, 224))  # Resize image to match model input size
@@ -29,8 +30,10 @@ def main():
             # Preprocess the image
             input_image = preprocess_image(image)
 
+            processed_image = rt.preprocess_input(input_image.copy())
+
             # Perform prediction
-            predictions = model.predict(input_image)
+            predictions = model.predict(processed_image)
             predicted_class = np.argmax(predictions[0])
 
             st.write(f"Predicted class: {class_labels[predicted_class]}")
