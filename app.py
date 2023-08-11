@@ -6,7 +6,7 @@ from PIL import Image
 import pickle
 
 # Create an instance of the model architecture
-model = rt.ResNet50(weights=None)  # Use the appropriate ResNet model
+model = tf.keras.applications.ResNet50(weights=None, include_top=True, classes=1000)
 
 # Load the saved model weights using pickle
 with open('modelRESNET.pkl', 'rb') as f:
