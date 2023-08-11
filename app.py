@@ -57,6 +57,7 @@ if __name__ == "__main__":
 # import tensorflow as tf
 # from tensorflow.keras.applications import ResNet50
 # from PIL import Image
+#from keras.models import load_model
 
 # # Load the saved model
 # model = tf.keras.models.load_model('modelRESNET.h5')
