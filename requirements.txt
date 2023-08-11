@@ -3,5 +3,4 @@ pillow
 tensorflow
 streamlit-option-menu
 numpy
-pickle
 PIL
