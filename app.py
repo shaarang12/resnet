@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.applications import resnet as rt
+
 from PIL import Image
 import pickle
 
@@ -16,6 +16,8 @@ def preprocess_image(image):
     image = np.expand_dims(image, axis=0)  # Add batch dimension
     return image
 
+
+from tensorflow.keras.applications import resnet as rt
 def main():
     st.title("Image Classification App")
     st.write("Upload an image for prediction")
