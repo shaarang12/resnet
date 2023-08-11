@@ -1,0 +1,4 @@
+streamlit
+pillow
+tensorflow
+streamlit-option-menu
